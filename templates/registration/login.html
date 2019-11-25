@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #divElement{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+        /* width: 100px; */
+        /* height: 100px; */
+        }​
+    </style>
+</head>
+<body style="background-color: #d93838;">
+    <div id="divElement">
+        <h2 style="text-align: center; color: white;" >SSO Server Login</h2>
+        <form method="post" style="display: inline-grid">
+          {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+          {{ form.as_p }}
+          <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
